@@ -1,0 +1,198 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+article {
+	font-family: "Calibri";
+	font-size: 12pt;
+	line-height: 2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	margin: 24pt 0;
+	font-size: inherit;
+}
+
+h1 {
+	margin: 0;
+}
+
+h2 {
+	margin-top: 0;
+}
+
+h3 {
+	font-weight: bold;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+code:not(.language-mermaid) {
+	font-family: inherit;
+	font-style: italic;
+}
+
+#body p,
+#abstract-content {
+	text-align: justify;
+	text-align-last: left;
+	hyphens: auto;
+}
+
+article div :first-child {
+	margin-top: 0;
+}
+
+img {
+	width: 100%;
+}
+
+#frontmatter {
+	page: front;
+}
+
+.pagedjs_page_content article,
+[data-id="frontmatter"] {
+	height: 100%;
+}
+
+#copyright {
+	height: 100%;
+	position: relative;
+
+	center {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+}
+
+#committee {
+	thead {
+		display: none;
+	}
+
+	table {
+		border-collapse: separate;
+		border-spacing: 0 24pt;
+
+		tr {
+			+ tr {
+				margin-top: 24pt;
+			}
+
+			td {
+				vertical-align: top;
+
+				&:first-child {
+					white-space: nowrap;
+					padding-right: 24pt;
+				}
+			}
+		}
+	}
+}
+
+.toc {
+	width: 100%;
+	break-after: page;
+
+	br {
+		display: none;
+	}
+
+	.pg {
+		display: flex;
+		justify-content: space-between;
+		text-align: right;
+	}
+
+	a {
+		display: block;
+		position: relative;
+		width: 100%;
+		text-decoration: none;
+		color: inherit;
+		
+		&::after {
+			content: target-counter(attr(href url), page);
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+
+		span {
+			width: 24pt;
+			display: inline-block;
+		}
+	}
+
+	a[href="#list-of-figures"]::after {
+		content: target-counter(attr(href url), page, lower-roman);
+	}
+}
+
+#ch-1 {
+	counter-reset: page 1;
+}
+
+.figure-caption {
+	font-weight: bold;
+	margin-top: -24pt;
+}
+
+#references-list {
+	text-indent: -48pt !important;
+	padding-left: 48pt !important;
+}
+
+@media print {
+	hr {
+		margin: 0;
+		border: none;
+		page-break-after: always;
+	}
+}
+
+@page {
+	size: letter;
+	margin: 1in 1.5in;
+
+	@bottom-center {
+		content: counter(page);
+		font-family: "Calibri";
+		font-size: 12pt;
+	}
+}
+
+@page front {
+	@bottom-center {
+		content: counter(page, lower-roman);
+	}
+}
+
+@page:first {
+	@bottom-center {
+		content: "";
+	}
+}
+
+@media screen {
+	.pagedjs_pages {
+		display:flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	.pagedjs_page {
+		box-shadow: 0 0 0 1px black;
+		margin: 1em;
+	}
+}
