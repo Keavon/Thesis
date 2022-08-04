@@ -62,20 +62,20 @@ ALL RIGHTS RESERVED
 |<br><br><br>||
 |COMMITTEE CHAIR:|Christian Eckhardt, Ph.D.<br>Assistant Professor of Computer Science|
 |COMMITTEE MEMBER:|April Marie Grow, Ph.D.<br>Assistant Professor of Computer Science|
-|COMMITTEE MEMBER:|Enrica Lovaglio Costello<br>Professor of Computational Art in the<br>Art and Design Department|
+|COMMITTEE MEMBER:|Enrica Lovaglio Costello, M.A., M.Arch.<br>Professor of Computational Art in the<br>Art and Design Department|
 
 </div>
 
 ---
 
-<center><h2>ABSTRACT</h2></center>
+<center><h2 style="margin-bottom: 0">ABSTRACT</h2></center>
 
 <center>Artist-Configurable Node-Based Approach to Generate Procedural<br>Brush Stroke Textures for Digital Painting</center>
 <center>Keavon Chambers</center>
 
 <br>
 
-<div id="abstract-content" style="line-height: 1.86">
+<div id="abstract-content" style="line-height: 1.95">
 Digital painting is the field of software designed to provide artists a virtual medium to emulate the experience and results of physical drawing. Several hardware and software components come together to form a whole workflow, ranging from the physical input devices, to the stroking process, to the texture content authorship. This thesis explores an artist-friendly approach to synthesize the textures that give life to digital brush strokes.
 
 Most painting software provides a limited library of predefined brush textures. They aim to offer styles approximating physical media like paintbrushes, pencils, markers, and airbrushes. Often these are static bitmap textures that are stamped onto the canvas at repeating intervals, causing discernible repetition artifacts. When more variety is desired, artists often download commercially available brush packs that expand the library of styles. However, included and supplemental brush packs are not easily artist-customizable.
@@ -89,6 +89,8 @@ Special thanks to:
 
 - Oliver Davies, for inspiration about the Slicer node concept, code assistance, and continual encouragement
 
+- Dennis Kobert, for help exploring ideas leading to this topic
+
 - James Lindsay, for code assistance
 
 ---
@@ -98,29 +100,29 @@ Special thanks to:
 <div id="table-of-contents" class="toc">
 
 <span class="pg"><span></span><span>Page</span></span>  
-[LIST OF FIGURES](#list-of-figures)  
+[<span class="text">LIST OF FIGURES</span>](#list-of-figures)  
 CHAPTER  
-[1&nbsp;&nbsp;Introduction](#ch-1)  
-[2&nbsp;&nbsp;Background](#ch-2)  
-[<span></span>2.1&nbsp;&nbsp;Preface: An Ideal Brush Model](#ch-2-1)  
-[<span></span>2.2&nbsp;&nbsp;Stretching Brush Model](#ch-2-2)  
-[<span></span>2.3&nbsp;&nbsp;Stamping Brush Model](#ch-2-3)  
-[<span></span>2.4&nbsp;&nbsp;Sweeping Brush Model](#ch-2-4)  
-[<span></span>2.5&nbsp;&nbsp;Simulating Brush Model](#ch-2-5)  
-[<span></span>2.6&nbsp;&nbsp;Synthesizing Brush Model (Proposed)](#ch-2-6)  
-[3&nbsp;&nbsp;Node System](#ch-3)  
-[<span></span>3.1&nbsp;&nbsp;Generator Nodes](#ch-3-1)  
-[<span></span>3.2&nbsp;&nbsp;Modifier Nodes](#ch-3-2)  
-[<span></span>3.3&nbsp;&nbsp;Input and Output Nodes](#ch-3-3)  
-[4&nbsp;&nbsp;Slicer Node](#ch-4)  
-[5&nbsp;&nbsp;Implementation](#ch-5)  
-[6&nbsp;&nbsp;Results](#ch-6)  
-[<span></span>6.1&nbsp;&nbsp;Bristle Brush with Paint](#ch-6-1)  
-[<span></span>6.2&nbsp;&nbsp;Ragged-Edged Ink Brush Pen](#ch-6-2)  
-[<span></span>6.3&nbsp;&nbsp;Watered-Down Ink Brush](#ch-6-3)  
-[<span></span>6.4&nbsp;&nbsp;Dotted Stamp Roller](#ch-6-4)  
-[7&nbsp;&nbsp;Conclusion](#ch-7)  
-[REFERENCES](#references)  
+[<span class="text">1&nbsp;&nbsp;Introduction</span>](#ch-1)  
+[<span class="text">2&nbsp;&nbsp;Background</span>](#ch-2)  
+[<span class="text"><span class="spacer"></span>2.1&nbsp;&nbsp;Preface: An Ideal Brush Model</span>](#ch-2-1)  
+[<span class="text"><span class="spacer"></span>2.2&nbsp;&nbsp;Stretching Brush Model</span>](#ch-2-2)  
+[<span class="text"><span class="spacer"></span>2.3&nbsp;&nbsp;Stamping Brush Model</span>](#ch-2-3)  
+[<span class="text"><span class="spacer"></span>2.4&nbsp;&nbsp;Sweeping Brush Model</span>](#ch-2-4)  
+[<span class="text"><span class="spacer"></span>2.5&nbsp;&nbsp;Simulating Brush Model</span>](#ch-2-5)  
+[<span class="text"><span class="spacer"></span>2.6&nbsp;&nbsp;Synthesizing Brush Model (Proposed)</span>](#ch-2-6)  
+[<span class="text">3&nbsp;&nbsp;Node System</span>](#ch-3)  
+[<span class="text"><span class="spacer"></span>3.1&nbsp;&nbsp;Generator Nodes</span>](#ch-3-1)  
+[<span class="text"><span class="spacer"></span>3.2&nbsp;&nbsp;Modifier Nodes</span>](#ch-3-2)  
+[<span class="text"><span class="spacer"></span>3.3&nbsp;&nbsp;Input and Output Nodes</span>](#ch-3-3)  
+[<span class="text">4&nbsp;&nbsp;Slicer Node</span>](#ch-4)  
+[<span class="text">5&nbsp;&nbsp;Implementation</span>](#ch-5)  
+[<span class="text">6&nbsp;&nbsp;Results</span>](#ch-6)  
+[<span class="text"><span class="spacer"></span>6.1&nbsp;&nbsp;Bristle Brush with Paint</span>](#ch-6-1)  
+[<span class="text"><span class="spacer"></span>6.2&nbsp;&nbsp;Ragged-Edged Ink Brush Pen</span>](#ch-6-2)  
+[<span class="text"><span class="spacer"></span>6.3&nbsp;&nbsp;Watered-Down Ink Brush</span>](#ch-6-3)  
+[<span class="text"><span class="spacer"></span>6.4&nbsp;&nbsp;Dotted Stamp Roller</span>](#ch-6-4)  
+[<span class="text">7&nbsp;&nbsp;Conclusion</span>](#ch-7)  
+[<span class="text">REFERENCES</span>](#references)  
 
 </div>
 
@@ -129,33 +131,33 @@ CHAPTER
 <div id="list-of-figures" class="toc">
 
 <span class="pg"><span>Figure</span><span>Page</span></span>  
-[1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ideal brush model](#fig-1)  
-[2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stretching method brush model](#fig-2)  
-[3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brush texture axial stretch demonstration](#fig-3)  
-[4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stamping method brush model](#fig-4)  
-[5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Repetition with the stamping model](#fig-5)  
-[6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alpha accumulation](#fig-6) 
-[7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Proposed method brush model](#fig-7)  
-[8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gradient nodes in their different styles](#fig-8)  
-[9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Perlin Noise nodes at different scales](#fig-9)  
-[10&nbsp;&nbsp;&nbsp;&nbsp;"F1" style Voronoi Noise](#fig-10)  
-[11&nbsp;&nbsp;&nbsp;&nbsp;"F2" style Voronoi Noise](#fig-11)  
-[12&nbsp;&nbsp;&nbsp;&nbsp;"Subtract" style Voronoi Noise](#fig-12)  
-[13&nbsp;&nbsp;&nbsp;&nbsp;"Multiply" style Voronoi Noise](#fig-13)  
-[14&nbsp;&nbsp;&nbsp;&nbsp;"Divide" style Voronoi Noise](#fig-14)  
-[15&nbsp;&nbsp;&nbsp;&nbsp;"Power" style Voronoi Noise](#fig-15)  
-[16&nbsp;&nbsp;&nbsp;&nbsp;"Multilog" style Voronoi Noise](#fig-16)  
-[17&nbsp;&nbsp;&nbsp;&nbsp;"Caustics" style Voronoi Noise](#fig-17)  
-[18&nbsp;&nbsp;&nbsp;&nbsp;Blend node](#fig-18)  
-[19&nbsp;&nbsp;&nbsp;&nbsp;Levels node](#fig-19)  
-[20&nbsp;&nbsp;&nbsp;&nbsp;Transform node](#fig-20)  
-[21&nbsp;&nbsp;&nbsp;&nbsp;Input and Output nodes](#fig-21)  
-[22&nbsp;&nbsp;&nbsp;&nbsp;Slicer node](#fig-22)  
-[23&nbsp;&nbsp;&nbsp;&nbsp;Slicer node used for an ink brush](#fig-23)  
-[24&nbsp;&nbsp;&nbsp;&nbsp;Results of a bristle brush with paint](#fig-24)  
-[25&nbsp;&nbsp;&nbsp;&nbsp;Results of a ragged-edged ink brush pen](#fig-25)  
-[26&nbsp;&nbsp;&nbsp;&nbsp;Results of a watered-down ink brush](#fig-26)  
-[27&nbsp;&nbsp;&nbsp;&nbsp;Results of a dotted stamp roller](#fig-27)  
+[<span class="text">1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ideal Brush Model</span>](#fig-1)  
+[<span class="text">2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stretching Method Brush Model</span>](#fig-2)  
+[<span class="text">3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brush Texture Axial Stretch Demonstration</span>](#fig-3)  
+[<span class="text">4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stamping Method Brush Model</span>](#fig-4)  
+[<span class="text">5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Repetition with the Stamping Model</span>](#fig-5)  
+[<span class="text">6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alpha Accumulation</span>](#fig-6) 
+[<span class="text">7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Proposed Method Brush Model</span>](#fig-7)  
+[<span class="text">8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gradient Nodes in Their Different Styles</span>](#fig-8)  
+[<span class="text">9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Perlin Noise Nodes at Different Scales</span>](#fig-9)  
+[<span class="text">10&nbsp;&nbsp;&nbsp;&nbsp;"F1" Style Voronoi Noise</span>](#fig-10)  
+[<span class="text">11&nbsp;&nbsp;&nbsp;&nbsp;"F2" Style Voronoi Noise</span>](#fig-11)  
+[<span class="text">12&nbsp;&nbsp;&nbsp;&nbsp;"Subtract" Style Voronoi Noise</span>](#fig-12)  
+[<span class="text">13&nbsp;&nbsp;&nbsp;&nbsp;"Multiply" Style Voronoi Noise</span>](#fig-13)  
+[<span class="text">14&nbsp;&nbsp;&nbsp;&nbsp;"Divide" Style Voronoi Noise</span>](#fig-14)  
+[<span class="text">15&nbsp;&nbsp;&nbsp;&nbsp;"Power" Style Voronoi Noise</span>](#fig-15)  
+[<span class="text">16&nbsp;&nbsp;&nbsp;&nbsp;"Multilog" Style Voronoi Noise</span>](#fig-16)  
+[<span class="text">17&nbsp;&nbsp;&nbsp;&nbsp;"Caustics" Style Voronoi Noise</span>](#fig-17)  
+[<span class="text">18&nbsp;&nbsp;&nbsp;&nbsp;Blend Node</span>](#fig-18)  
+[<span class="text">19&nbsp;&nbsp;&nbsp;&nbsp;Levels Node</span>](#fig-19)  
+[<span class="text">20&nbsp;&nbsp;&nbsp;&nbsp;Transform Node</span>](#fig-20)  
+[<span class="text">21&nbsp;&nbsp;&nbsp;&nbsp;Input and Output Nodes</span>](#fig-21)  
+[<span class="text">22&nbsp;&nbsp;&nbsp;&nbsp;Slicer Node</span>](#fig-22)  
+[<span class="text">23&nbsp;&nbsp;&nbsp;&nbsp;Slicer Node Used for an Ink Brush</span>](#fig-23)  
+[<span class="text">24&nbsp;&nbsp;&nbsp;&nbsp;Results of a Bristle Brush with Paint</span>](#fig-24)  
+[<span class="text">25&nbsp;&nbsp;&nbsp;&nbsp;Results of a Ragged-Edged Ink Brush Pen</span>](#fig-25)  
+[<span class="text">26&nbsp;&nbsp;&nbsp;&nbsp;Results of a Watered-Down Ink Brush</span>](#fig-26)  
+[<span class="text">27&nbsp;&nbsp;&nbsp;&nbsp;Results of a Dotted Stamp Roller</span>](#fig-27)  
 
 </div>
 
@@ -504,7 +506,7 @@ A descoped feature would have included an additional preview view with an intera
 
 The full source code for the prototype may be viewed at:
 
-https://github.com/Keavon/Brush-Nodes
+<center>https://github.com/Keavon/Brush-Nodes</center>
 
 An interactive demo is also available from that page.
 
@@ -572,7 +574,7 @@ The concept of applying a node graph procedural authoring environment, with appl
 
 The author of this thesis is the creator of a node-based 2D graphics editing tool and plans to use this concept as inspiration for the application's painting system. Further information can be found at the project's website:
 
-https://graphite.rs
+<center>https://graphite.rs</center>
 
 </div>
 

@@ -120,6 +120,20 @@ img {
 		width: 100%;
 		text-decoration: none;
 		color: inherit;
+		white-space: nowrap;
+		overflow: hidden;
+
+		.text,
+		&::after {
+			background: white;
+			padding: 0 0.5em;
+			margin: 0 -0.5em;
+		}
+
+		&::before {
+			content: "........................................................................................................................................................................................................";
+			float: right;
+		}
 		
 		&::after {
 			content: target-counter(attr(href url), page);
@@ -128,7 +142,7 @@ img {
 			right: 0;
 		}
 
-		span {
+		.spacer {
 			width: 24pt;
 			display: inline-block;
 		}
