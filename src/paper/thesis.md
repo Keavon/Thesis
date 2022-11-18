@@ -54,15 +54,15 @@ ALL RIGHTS RESERVED
 
 <div id="committee">
 
-|||
-|-:|-|
-|TITLE:|Artist-Configurable Node-Based Approach to Generate Procedural Brush Stroke Textures for Digital Painting|
-|AUTHOR:|Keavon Chambers|
-|DATE SUBMITTED:| June 2022|
-|<br><br><br>||
-|COMMITTEE CHAIR:|Christian Eckhardt, Ph.D.<br>Assistant Professor of Computer Science|
-|COMMITTEE MEMBER:|April Marie Grow, Ph.D.<br>Assistant Professor of Computer Science|
-|COMMITTEE MEMBER:|Enrica Lovaglio Costello, M.A., M.Arch.<br>Professor of Computational Art in the<br>Art and Design Department|
+|                   |                                                                                                               |
+| ----------------: | ------------------------------------------------------------------------------------------------------------- |
+|            TITLE: | Artist-Configurable Node-Based Approach to Generate Procedural Brush Stroke Textures for Digital Painting     |
+|           AUTHOR: | Keavon Chambers                                                                                               |
+|   DATE SUBMITTED: | June 2022                                                                                                     |
+|      <br><br><br> |                                                                                                               |
+|  COMMITTEE CHAIR: | Christian Eckhardt, Ph.D.<br>Assistant Professor of Computer Science                                          |
+| COMMITTEE MEMBER: | April Marie Grow, Ph.D.<br>Assistant Professor of Computer Science                                            |
+| COMMITTEE MEMBER: | Enrica Lovaglio Costello, M.A., M.Arch.<br>Professor of Computational Art in the<br>Art and Design Department |
 
 </div>
 
@@ -81,9 +81,10 @@ Digital painting is the field of software designed to provide artists a virtual 
 Most painting software provides a limited library of predefined brush textures. They aim to offer styles approximating physical media like paintbrushes, pencils, markers, and airbrushes. Often these are static bitmap textures that are stamped onto the canvas at repeating intervals, causing discernible repetition artifacts. When more variety is desired, artists often download commercially available brush packs that expand the library of styles. However, included and supplemental brush packs are not easily artist-customizable.
 
 In recent years, a separate field of digital art tooling has seen the popular growth of node-based procedural content generation. 3D models, shaders, and materials are commonly authored by artists using functions that can be linked together in a visual programming environment called a node graph. In this work, the feasibility is tested of using a node graph to procedurally generate highly customizable brush textures. The system synthesizes textures that adapt to parameters like pen pressure and stretch along the full length of each brush stroke instead of stamping repetitively. The result is a more flexible and artist-friendly way to define, share, and tweak brush textures used in digital painting.
+
 </div>
 
-<center><h2>ACKNOWLEDGEMENTS</h2></center>
+<center><h2>ACKNOWLEDGMENTS</h2></center>
 
 Special thanks to:
 
@@ -117,12 +118,12 @@ CHAPTER
 [<span class="text">4&nbsp;&nbsp;Slicer Node</span>](#ch-4)  
 [<span class="text">5&nbsp;&nbsp;Implementation</span>](#ch-5)  
 [<span class="text">6&nbsp;&nbsp;Results</span>](#ch-6)  
-[<span class="text"><span class="spacer"></span>6.1&nbsp;&nbsp;Bristle Brush with Paint</span>](#ch-6-1)  
+[<span class="text"><span class="spacer"></span>6.1&nbsp;&nbsp;Flat Bristle Brush with Paint</span>](#ch-6-1)  
 [<span class="text"><span class="spacer"></span>6.2&nbsp;&nbsp;Ragged-Edged Ink Brush Pen</span>](#ch-6-2)  
 [<span class="text"><span class="spacer"></span>6.3&nbsp;&nbsp;Watered-Down Ink Brush</span>](#ch-6-3)  
 [<span class="text"><span class="spacer"></span>6.4&nbsp;&nbsp;Dotted Stamp Roller</span>](#ch-6-4)  
 [<span class="text">7&nbsp;&nbsp;Conclusion</span>](#ch-7)  
-[<span class="text">REFERENCES</span>](#references)  
+[<span class="text">REFERENCES</span>](#references)
 
 </div>
 
@@ -136,7 +137,7 @@ CHAPTER
 [<span class="text">3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brush Texture Axial Stretch Demonstration</span>](#fig-3)  
 [<span class="text">4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stamping Method Brush Model</span>](#fig-4)  
 [<span class="text">5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Repetition with the Stamping Model</span>](#fig-5)  
-[<span class="text">6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alpha Accumulation</span>](#fig-6) 
+[<span class="text">6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alpha Accumulation</span>](#fig-6)  
 [<span class="text">7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Proposed Method Brush Model</span>](#fig-7)  
 [<span class="text">8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gradient Nodes in Their Different Styles</span>](#fig-8)  
 [<span class="text">9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Perlin Noise Nodes at Different Scales</span>](#fig-9)  
@@ -154,10 +155,10 @@ CHAPTER
 [<span class="text">21&nbsp;&nbsp;&nbsp;&nbsp;Input and Output Nodes</span>](#fig-21)  
 [<span class="text">22&nbsp;&nbsp;&nbsp;&nbsp;Slicer Node</span>](#fig-22)  
 [<span class="text">23&nbsp;&nbsp;&nbsp;&nbsp;Slicer Node Used for an Ink Brush</span>](#fig-23)  
-[<span class="text">24&nbsp;&nbsp;&nbsp;&nbsp;Results of a Bristle Brush with Paint</span>](#fig-24)  
+[<span class="text">24&nbsp;&nbsp;&nbsp;&nbsp;Results of a Flat Bristle Brush with Paint</span>](#fig-24)  
 [<span class="text">25&nbsp;&nbsp;&nbsp;&nbsp;Results of a Ragged-Edged Ink Brush Pen</span>](#fig-25)  
 [<span class="text">26&nbsp;&nbsp;&nbsp;&nbsp;Results of a Watered-Down Ink Brush</span>](#fig-26)  
-[<span class="text">27&nbsp;&nbsp;&nbsp;&nbsp;Results of a Dotted Stamp Roller</span>](#fig-27)  
+[<span class="text">27&nbsp;&nbsp;&nbsp;&nbsp;Results of a Dotted Stamp Roller</span>](#fig-27)
 
 </div>
 
@@ -173,9 +174,9 @@ When setting out to build a 2D art tool, a component of core importance is the b
 
 While each method has its pros and cons, a common factor is the inability to provide deep levels of artistic control over the look, feel, and interactions of a chosen brush style. This leaves artists stuck with a lack of variety and constrained in their freedom to realize their creative visions for particular artistic styles. The digital creative industry is increasingly moving towards building tooling that is art-directable, and that is an especially valuable trait for a tool so fundamental as the paintbrush.
 
-Digital illustrations are often made by drawing with a graphics tablet where the stylus provides artists a more tactile and natural feel compared to a mouse. Furthermore, graphics tablets provide additional axes of input data including pen pressure and tilt in three axes of motion. Many industry-standard digital painting applications like Photoshop and Krita allow users to map these input axes to chosen parameters like brush radius and opacity. Such choices are simple and understandable, but they can only loosely approximate the qualities of physical brushes, markers, pencils, and other tangible media on a real drawing surface. Pressure and tilt do not only affect the opacity and thickness of a line, but in more complex ways as well. Providing artists control over the mapping from input to output is a crucial capability for modeling diverse styles of brush textures effectively.
+Digital illustrations are often made by drawing with a graphics tablet where the stylus provides artists a more tactile and natural feel compared to a mouse. Furthermore, graphics tablets provide additional axes of input data including pen pressure and tilt in three axes of attitude. Many industry-standard digital painting applications like Photoshop and Krita allow users to map these input axes to chosen parameters like brush radius and opacity. Such choices are simple and understandable, but they can only loosely approximate the qualities of physical brushes, markers, pencils, and other tangible media on a real drawing surface. Pressure and tilt do not only affect the opacity and thickness of a line, but in more complex ways as well. Providing artists control over the mapping from input to output is a crucial capability for modeling diverse styles of brush textures effectively.
 
-In the related field of 3D art, procedural texture generation is now a common workflow that solves the problem of mapping complex input parameters in nontrivial ways to a rendered output texture. The 3D industry uses 2D textures for the materials that define the coloration and lighting on the surfaces of models and environments. Usually, these are square textures that repeat seamlessly across the surface of walls, wheels, or walkways in a 3D scene. Because of the large coverage that would be required to generate a texture uniquely across a sizable area like the terrain of a world, repetition helps avoid impractically large GPU memory and disk storage requirements in games. By comparison, brush paths in a digital painting are drawn along a curving line, and it is feasible to compute and store textures that scale in a single axis. Area coverage grows with the square of the edge lengths, while linear coverage only grows with the edge length. Therefore, it is feasible to procedurally generate a unique texture that spans the length of every brush stroke in a painting with reasonable memory and computation demands. What remains is deciding upon exactly how to approach that procedural generation goal with the aim of being useful, flexible, and user-friendly.
+In the related field of 3D art, procedural texture generation is now a common workflow that solves the problem of mapping complex input parameters in nontrivial ways to a rendered output texture. The 3D industry uses 2D textures for the materials that define the coloration and lighting on the surfaces of models and environments. Usually, these are square textures that repeat seamlessly across the surfaces of walls, walkways, weapons, or wyverns in a 3D scene. Because of the large coverage that would be required to generate a texture uniquely across a sizable area like the terrain of a world, repetition helps avoid impractically large GPU memory and disk storage requirements in games. By comparison, brush paths in a digital painting are drawn along a curving line, and it is feasible to compute and store textures that scale in a single axis. Area coverage grows with the square of the edge lengths, while linear coverage only grows with the edge length. Therefore, it is practical to procedurally generate a unique texture that spans the length of every brush stroke in a painting with reasonable memory and computation demands. What remains is deciding upon exactly how to approach that procedural generation goal with the aim of being useful, flexible, and user-friendly.
 
 The software Substance Designer is the industry standard used by 3D artists for useful, flexible, and relatively user-friendly procedural texture authorship. It acts as a toolbox for generating textures in a node graph environment where functions receive parameters then compute some derived output that the user wires into other nodes, forming a directed acyclic graph (DAG) of image processing steps. Functions are the nodes of the graph, represented by boxes, and data connections are the edges of the graph, represented as curved wires. Some nodes generate textures, like Perlin noise that employs a random seed to produce a cloud-like pattern. Others apply effects to an input texture, like Gaussian blur or exposure histogram curves. Combining generated content in clever ways results in practically any material that's imaginable by a procedural artist, representing photorealistic or stylized looks. It stands to reason that the proven power of node-based procedural texture generation can be borrowed and applied to generate stylized or photorealistic brush textures as well.
 
@@ -208,6 +209,7 @@ graph TD
 		dynamics --> output
 	end
 ```
+
 <div id="fig-1" class="figure-caption">
 Figure 1: An ideal brush model, representing real life painting or sophisticated digital painting systems.
 </div>
@@ -217,12 +219,14 @@ The first component in the model is the configurable brush style decisions that 
 The second component in the model is the input data. Based on user interactions with input device hardware and settings in the software, this represents the parameters that change with every unique stroke. Even using the same brush configuration, these values can differ every time something is drawn. Common values are listed below, although more are possible and others like "speed" or "curvature" can be derived from them.
 
 At each sample along the path:
+
 - X and Y coordinates
 - Pen pressure (optional)
 - Pen tilt, in up to three axes (optional)
 - Timestamp (optional)
 
 Possible properties that usually are set once per stroke:
+
 - Standard stroke width
 - Color
 
@@ -247,6 +251,7 @@ flowchart TD
 		stretching --> final
 	end
 ```
+
 <div id="fig-2" class="figure-caption">
 Figure 2: With the stretching method, style decisions occur before the brush is rendered and per-stroke inputs are applied afterward.
 </div>
@@ -256,6 +261,7 @@ Usually texture strips are authored by using real art media to draw a straight l
 The drawbacks of this approach mainly center around its static, non-adaptive nature. It is the brush equivalent to authoring 3D material textures by capturing real-world photos of surfaces— highly realistic but not very customizable after-the-fact. It also means that the uniqueness of multiple strokes using the same texture may become apparent with noticeable duplication of the pattern throughout the artwork. Because brush texture strips are created beforehand, the at-time-of-usage properties like stroke length, chosen stroke width, and localized pressure/tilt cannot be factored into the original texture source.
 
 ![](Brush%20Stretch%20Test.png)
+
 <div id="fig-3" class="figure-caption">
 Figure 3: Brush texture axial stretch demonstration in Adobe Illustrator (top) and Affinity Designer (bottom) where the same texture visibly repeats and deviates from its authored aspect ratio.
 </div>
@@ -284,6 +290,7 @@ flowchart TD
 		stamping --> final
 	end
 ```
+
 <div id="fig-4" class="figure-caption">
 Figure 4: With the stamping method, style decisions by the author of a brush take the form of a stamp texture and custom settings for the stamping system that applies brush dynamics and other configurable tricks to lend variety and quality to the result.
 </div>
@@ -291,11 +298,13 @@ Figure 4: With the stamping method, style decisions by the author of a brush tak
 The approach does come with its own share of disadvantages. The illusion can often be broken when the repetitiveness of the stamp texture becomes apparent, as shown in the Krita painting application in Figure 5. Randomization of rotation and countless other tricks can be used to break up the repetition with the stamping algorithm, however these strategies need to be configured for each brush style, thereby adding complexity to the user experience. By its nature of stamping down textures, it works better at modeling the look of dry more than wet media. Another drawback is that, while the stamping dynamics settings can be modified on a brush style preset by the user, the texture (which is often digitized from a physical pattern) is not so easily reconfigurable.
 
 ![](Obvious%20Repetition%20-%20Krita.png)
+
 <div id="fig-5" class="figure-caption">
 Figure 5: Noticeable repetition is visible in many cases with the stamping model, as shown here in Krita.
 </div>
 
 ![](Alpha%20Accumulation%20and%20Repetition%20Test.png)
+
 <div id="fig-6" class="figure-caption">
 Figure 6: Alpha accumulation and repetition is a tradeoff based on the choice of spacing distance. The circular brushes have 100% feather on the left and 0% on the right. The top row uses 1% spacing, the middle row 25%, and the bottom row 50%.
 </div>
@@ -304,7 +313,7 @@ One further limitation of stamping is how the discrete nature of individual stam
 
 <h3 id="ch-2-4">2.4 Sweeping Brush Model</h3>
 
-In response to the discrete nature of stamping, a proposed variation is the brush sweeping model. Rather than placing the stamp texture at a repeating interval, it smears the texture across the stroke trajectory. The differences between sweeping and stroking are discussed in Chapter 2: A Brush Stroke Synthesis Toolbox<sup>[[1]](#ref-1)</sup> of *Image and Video-Based Artistic Stylisation* by Paul Rosin and John Collomosse.
+In response to the discrete nature of stamping, a proposed variation is the brush sweeping model. Rather than placing the stamp texture at a repeating interval, it smears the texture across the stroke trajectory. The differences between sweeping and stroking are discussed in Chapter 2: A Brush Stroke Synthesis Toolbox<sup>[[1]](#ref-1)</sup> of _Image and Video-Based Artistic Stylisation_ by Paul Rosin and John Collomosse.
 
 A modern implementation<sup>[[2]](#ref-2)</sup> uses integral calculus to analytically determine the pixel fill opacity in the rendering process efficiently on the GPU.
 
@@ -338,6 +347,7 @@ flowchart TD
 		stretching --> final
 	end
 ```
+
 <div id="fig-7" class="figure-caption">
 Figure 7: The proposed method provides full dynamics and appearance control to the user based on input data, then stretches the resulting texture strip like the texture stretching brush model. This is the ideal brush model but with the insertion of the "Stretch and curve transformations" step.
 </div>
@@ -359,6 +369,7 @@ There are several types of nodes that are described in the sections below, many 
 The Gradient node generates a white-to-black gradient. Its available style choices, pictured in Figure 8, include "Linear Horizontal", "Linear Vertical", "Bookmatched X", "Bookmatched Y", and "Radial". An "Invert" setting can reverse the direction of black and white. "Falloff" and "Thickness" affect the ramp of the gradient and "Outer Radius" affects the size of the radial gradient's circular reach. Like all nodes that produce a texture, the orange dot acts as the output for what is shown in the node's thumbnail.
 
 ![](Nodes%20-%20Gradient.png)
+
 <div id="fig-8" class="figure-caption">
 Figure 8: Gradient nodes in their different styles.
 </div>
@@ -366,6 +377,7 @@ Figure 8: Gradient nodes in their different styles.
 The Perlin Noise node generates a randomized cloud pattern. Its scale can be chosen, as shown in Figure 9, to provide different frequencies of noise as desired, and regardless of scale the texture will tile seamlessly along its edges. Its seed can be set to provide a new random pattern.
 
 ![](Nodes%20-%20Perlin%20Noise.png)
+
 <div id="fig-9" class="figure-caption">
 Figure 9: Perlin Noise nodes at different scales.
 </div>
@@ -373,16 +385,19 @@ Figure 9: Perlin Noise nodes at different scales.
 The Voronoi Noise node generates a randomized cellular structure. Different jitter values between 0 and 1 can provide a choice of regularity or disorder. Eight choices of style can produce a diverse array of looks to suit the artist's needs. These are "F1" (Figure 10), "F2" (Figure 11), "Subtract" (Figure 12), "Multiply" (Figure 13), "Divide" (Figure 14), "Power" (Figure 15), "Multilog" (Figure 16), and "Caustics" (Figure 17). These styles are implemented taking a grid of points, randomizing their offset based on the jitter value, and calculating the distance of each pixel to the nearest point for the F1 value and the distance to the second-nearest point for the F2 value. Additional styles are created by arithmetically combining F1 and F2 as described in the captions in the figures below.
 
 ![](Nodes%20-%20Voronoi%20Noise%20-%20F1.png)
+
 <div id="fig-10" class="figure-caption">
 Figure 10: Voronoi Noise nodes at different jitter values with the "F1" style.
 </div>
 
 ![](Nodes%20-%20Voronoi%20Noise%20-%20F2.png)
+
 <div id="fig-11" class="figure-caption">
 Figure 11: Voronoi Noise nodes at different jitter values with the "F2" style.
 </div>
 
 ![](Nodes%20-%20Voronoi%20Noise%20-%20Subtract.png)
+
 <div id="fig-12" class="figure-caption">
 
 Figure 12: Voronoi Noise nodes at different jitter values with the "Subtract" style, which is calculated in GLSL as `F2 - F1`.
@@ -390,6 +405,7 @@ Figure 12: Voronoi Noise nodes at different jitter values with the "Subtract" st
 </div>
 
 ![](Nodes%20-%20Voronoi%20Noise%20-%20Multiply.png)
+
 <div id="fig-13" class="figure-caption">
 
 Figure 13: Voronoi Noise nodes at different jitter values with the "Multiply" style, which is calculated in GLSL as `F1 * F2`.
@@ -397,6 +413,7 @@ Figure 13: Voronoi Noise nodes at different jitter values with the "Multiply" st
 </div>
 
 ![](Nodes%20-%20Voronoi%20Noise%20-%20Divide.png)
+
 <div id="fig-14" class="figure-caption">
 
 Figure 14: Voronoi Noise nodes at different jitter values with the "Divide" style, which is calculated in GLSL as `F1 / F2`.
@@ -404,6 +421,7 @@ Figure 14: Voronoi Noise nodes at different jitter values with the "Divide" styl
 </div>
 
 ![](Nodes%20-%20Voronoi%20Noise%20-%20Power.png)
+
 <div id="fig-15" class="figure-caption">
 
 Figure 15: Voronoi Noise nodes at different jitter values with the "Power" style, which is calculated in GLSL as `pow(F2, F1)`.
@@ -411,6 +429,7 @@ Figure 15: Voronoi Noise nodes at different jitter values with the "Power" style
 </div>
 
 ![](Nodes%20-%20Voronoi%20Noise%20-%20Multilog.png)
+
 <div id="fig-16" class="figure-caption">
 
 Figure 16: Voronoi Noise nodes at different jitter values with the "Multilog" style, which is calculated in GLSL as `log(F1) * log(F2)`.
@@ -418,6 +437,7 @@ Figure 16: Voronoi Noise nodes at different jitter values with the "Multilog" st
 </div>
 
 ![](Nodes%20-%20Voronoi%20Noise%20-%20Caustics.png)
+
 <div id="fig-17" class="figure-caption">
 
 Figure 17: Voronoi Noise nodes at different jitter values with the "Caustics" style, which is calculated in GLSL as `log(log(F1) * log(F2))`.
@@ -426,9 +446,10 @@ Figure 17: Voronoi Noise nodes at different jitter values with the "Caustics" st
 
 <h3 id="ch-3-2">3.2 Modifier Nodes</h3>
 
-The Blend node takes two input textures and composites them as a single output. Two examples are shown in Figure 18. The blend mode can be selected between "Normal", "Dissolve", "Multiply", "Screen", "Add (Linear Dodge)", "Overlay", and "Subtract" which uses the industry-standard compositing blend equations. Opacity can be set to favor the top or bottom input more in the "Normal", "Dissolve", and "Overlay" modes while it has no effect in the others in this implementation.
+The Blend node takes two input textures and composites them as a single output. Two examples are shown in Figure 18. The blend mode can be selected between "Normal", "Dissolve", "Multiply", "Screen", "Add (Linear Dodge)", "Overlay", and "Subtract" which uses the industry-standard compositing blend equations. Opacity can be set to favor the top or bottom input more in the "Normal", "Dissolve", and "Overlay" modes while it has no effect on the others in this implementation.
 
 ![](Nodes%20-%20Blend.png)
+
 <div id="fig-18" class="figure-caption">
 Figure 18: Blend node used in two example compositing scenarios.
 </div>
@@ -436,6 +457,7 @@ Figure 18: Blend node used in two example compositing scenarios.
 The Levels node takes a texture and clamps its light and dark regions as specified. Three examples are shown in Figure 19. "Shadows" and "Highlights" clamps the dark and light parts of the image, making anything beyond the specified values either pure black or pure white. "Midtones (Interp Factor)" biases the gray levels towards clamped white or black areas. "Minimums" and "Maximums" caps the darkest and lightest parts of the texture at some gray level.
 
 ![](Nodes%20-%20Levels.png)
+
 <div id="fig-19" class="figure-caption">
 Figure 19: Levels node shown in three example usage scenarios.
 </div>
@@ -443,6 +465,7 @@ Figure 19: Levels node shown in three example usage scenarios.
 The Transform node takes a texture and modifies its scale, offset position, and rotation. Two examples are shown in Figure 20. It can be configured to repeat, mirror repeat, and clamp when the input texture bounds are exceeded. When rotating, the exposed corners can be configured to have the colors clamped if desired.
 
 ![](Nodes%20-%20Transform.png)
+
 <div id="fig-20" class="figure-caption">
 Figure 20: Transform node shown in two example usage scenarios.
 </div>
@@ -452,6 +475,7 @@ Figure 20: Transform node shown in two example usage scenarios.
 The Input and Output nodes are the defaults provided in a fresh node graph, as pictured in Figure 21. These two nodes cannot be deleted or duplicated.
 
 ![](Nodes%20-%20Input%20and%20Output.png)
+
 <div id="fig-21" class="figure-caption">
 Figure 21: Input and Output nodes with the pressure samples connected to the brush output.
 </div>
@@ -467,6 +491,7 @@ The Output node is the destination for node graph data. When a strip texture is 
 The Slicer node is an important node designed to convert from square textures into strip textures, demonstrated in Figure 22. Squares are useful to work with because their aspect ratio makes them easy to preview, and it is thus desirable to rely on them for many of the creative decisions that go into building a node graph out of generators and modifiers.
 
 ![](Node%20Graph%20-%20Slicer.png)
+
 <div id="fig-22" class="figure-caption">
 Figure 22: Slicer node rendering vertical cross-sections of an upward-slanted blob shape, showing how the increase then decrease in pen pressure rides the slant up then back down by the end as pressure subsides to 0 (black).
 </div>
@@ -474,11 +499,12 @@ Figure 22: Slicer node rendering vertical cross-sections of an upward-slanted bl
 One example of a common use for the Slicer is to define the way that a brush tapers with an increase in stylus pressure or tilt angles. A more involved example of this concept in Figure 23 approximates the brush pressure contour part of a semi-diluted ink brush.
 
 ![](Node%20Graph%20-%20Ink%20Taper.png)
+
 <div id="fig-23" class="figure-caption">
 Figure 23: Slicer node used to generate the pressure-based taper for an ink brush with partially diluted ink.
 </div>
 
-The node's two inputs are the "Sliceable" square texture and the "Slice Column Depth" strip texture. The sliceable texture should be designed in a way that its vertical cross sections (columns of pixels) vary on a continuum from left to right. For example, a left-pointing triangle has cross sections that heighten from left to right which makes it great for modeling pen pressure along the brush stroke. Described another way, the Slicer node maps the columns of the input strip texture to the columns of the input square texture, where the brightness of the strip column corresponds to how far right the slice should be taken from the sliceable. Reading an input strip from left to right, the dark shades slice columns from the left part of the sliceable and the light shades slice from the right.
+The node's two inputs are the "Sliceable" square texture and the "Slice Column Depth" strip texture. The sliceable texture should be designed in a way that its vertical cross sections (columns of pixels) vary on a continuum from left to right. For example, a left-pointing triangle has cross sections that heighten from left to right which makes it great for modeling pen pressure along the brush stroke. Described another way, the Slicer node maps the columns of the input strip texture to the columns of the input square texture, where the brightness of the strip column corresponds to how far right the slice should be taken from the sliceable. Reading an input strip from left to right, the dark shades slice columns from the left parts of the sliceable and the light shades slice from the right parts.
 
 The description of the Slicer node's function may be confusing upon initial introduction but it becomes intuitive to reason about after a brief period of usage. It therefore serves as a useful artist-friendly tool in the node graph system's toolbox of nodes, whereas a more complex stroke generating method could be difficult enough to limit its utility.
 
@@ -520,15 +546,16 @@ If all goes well, the result should resemble the reference imagery in style. It 
 
 This section explores several example brushes created to push the boundaries in different stylistic directions.
 
-<h3 id="ch-6-1">6.1 Bristle Brush with Paint</h3>
+<h3 id="ch-6-1">6.1 Flat Bristle Brush with Paint</h3>
 
 Brushes with more viscous media like paint, as opposed to ink or watercolor, tend to show the bristles of the brush and transfer paint to more of the page when added pressure is applied because there is greater contact with the geometry of the many bristles against the surface.
 
 This example, shown in Figure 24, achieves the goal of replicating the overall look of an assortment of reference images found through an online search. It also manages to avoid an overly complex node graph, meaning it is simple for non-advanced users to create and there is still plenty of room to add further levels of detail and sophistication as desired.
 
 ![](results-bristle-brush.png)
+
 <div id="fig-24" class="figure-caption">
-Figure 24: Results emulating a bristle brush with paint.
+Figure 24: Results emulating a flat bristle brush with paint.
 </div>
 
 <br><br>
@@ -538,6 +565,7 @@ Figure 24: Results emulating a bristle brush with paint.
 A brush pen with a vividly black ink provides almost a completely solid appearance except for the taper and the ragged edges, caused by the paper's small-scale surface geometry and the brush tip. Replicating that look around the edges is the goal for this test, shown in Figure 25. The system handles ink-based brushes very well which other brush models like stamping often struggle with.
 
 ![](results-solid-ink.png)
+
 <div id="fig-25" class="figure-caption">
 Figure 25: Results emulating a ragged-edged ink brush pen.
 </div>
@@ -547,15 +575,17 @@ Figure 25: Results emulating a ragged-edged ink brush pen.
 Taking the ink brush style even further, this test proves the effective ability to replicate the look of watered-down ink which behaves in nontrivial ways. Painting areas of a dry page makes the wet areas store water in a tapered dome-like shape because of surface tension, causing the ink particles to dry onto the page quickest near the edges as the wet area contracts during the drying process. This leaves behind a darker perimeter where the extents of the brushed area wet the page, then an inner region where the ink flows in unique patterns of greater concentration within the blob of water. This test, shown in Figure 26, illustrates that procedural generation based on noise textures lends itself very well to emulating that phenomenon. All other brush models besides simulation are incapable of achieving a similar look. The brush preview in this case looks remarkably photorealistic.
 
 ![](results-diluted-ink.png)
+
 <div id="fig-26" class="figure-caption">
 Figure 26: Results emulating a watered-down ink brush.
 </div>
 
 <h3 id="ch-6-4">6.4 Dotted Stamp Roller</h3>
 
-Deviating from the category of brushes alltogether and using an alternate application method such as a roller is a good method of testing robustness of the technique. This example, shown in Figure 27, successfully provides an organic look by integrating random variation and pressure into the semi-regular grid pattern of the referenced style. This also remains simple and beginner-friendly by using only a handfull of nodes.
+Deviating from the category of brushes alltogether and using an alternate application method such as a roller is a good method of testing robustness of the technique. This example, shown in Figure 27, successfully provides an organic look by integrating random variation and pressure into the semi-regular grid pattern of the referenced style. This also remains simple and beginner-friendly by using only a handful of nodes.
 
 ![](results-stipple-roller.png)
+
 <div id="fig-27" class="figure-caption">
 Figure 27: Results emulating a dotted stamp roller.
 </div>
@@ -568,7 +598,7 @@ The stress tests attempted in the previous chapter lend credence to the viabilit
 
 Future improvements to the system should revolve around adding to the library of available nodes to simplify and expand the capabilities. Other brush models like stamping and sweeping are actually compatible with the node-based workflow and would take the form of nodes. To improve support for dry media, a stamp node could take a square texture and draw it at repeating intervals based on an assortment of parameters to output a strip texture. Other desirable nodes would be one that tapers an input strip texture based on the brightness values encoded in a second input strip. More useful data from the Output texture would be speed, since physical paint brushes often get lighter with quick motion, and a factor encoding brush angle in relation to the direction of brush motion. These improvements would make the system easier to use and more powerful at building complex and highly reactive brush styles. Another improvement would be the inclusion of color which could even vary with properties like pressure or tilt.
 
-A direction for further research on the subject beyond the concepts explored here can find solutions for the limitations of texture stretching. One topic can aim to solve the start and end points of stroke paths which may end abruptly if the stroke data and node graph do not provide for clean ends. Another topic can look to find the best approach to dealing with self-intersecting strokes where the textures run through each other and need to blend or even interact with itself in a procedurally defined way. Another challenge involves finding a way to shorten or lengthen a curve on its interior by modifying the path geometry without causing the texture on one end to "slide" along the existing geometry with the length change. One more is finding a comprehensible manner to use 3D noise textures to prevent the "bookmatched" or pixelated look of the slice node so the third dimension is always providing fresh imagery.
+A direction for further research on the subject beyond the concepts explored here could find solutions for the limitations of texture stretching. Dealing with clean stretching around sharp curve bends would be valuable. A related topic can aim to solve the start and end points of stroke paths which may end abruptly if the stroke data and node graph do not provide for clean ends. Another topic can look to find the best approach for dealing with a self-intersecting stroke where the texture runs through itself and needs to blend nicely or even interact with itself in a procedurally defined way. Another challenge involves finding a way to shorten or lengthen a curve on its interior by modifying the path geometry without causing the texture on one end to "slide" along the existing geometry with the length change. One more is finding a comprehensible manner to use 3D noise textures to prevent the "bookmatched" or pixelated look of the Slicer node so the extra dimension is always providing fresh imagery.
 
 The concept of applying a node graph procedural authoring environment, with application-specific nodes (like Slicer) designed for dealing with both square and strip textures, is clearly a worthwhile technique for digital painting research and real world painting tools to adopt. It moves towards, and nearly reaches, the ideal brush model that provides artists with full customization and integration of pen tablet axis inputs. The novel method presented in this paper improves upon unsolved problems in the approaches used by popular graphics editing tools and would be a welcome addition to future 2D painting applications.
 
