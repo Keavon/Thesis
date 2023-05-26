@@ -31,6 +31,10 @@ h3 {
 a {
 	text-decoration: none;
 	color: inherit;
+
+	&[href^="http"] {
+		text-decoration: underline;
+	}
 }
 
 code:not(.language-mermaid) {
@@ -158,8 +162,11 @@ img {
 }
 
 .figure-caption {
-	font-weight: bold;
 	margin-top: -24pt;
+
+	span {
+		font-weight: bold;
+	}
 }
 
 #references-list {
@@ -194,7 +201,7 @@ img {
 
 @page:first {
 	@bottom-center {
-		content: "";
+		content: "" !important;
 	}
 }
 

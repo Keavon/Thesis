@@ -133,32 +133,32 @@ CHAPTER
 
 <span class="pg"><span>Figure</span><span>Page</span></span>  
 [<span class="text">1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ideal Brush Model</span>](#fig-1)  
-[<span class="text">2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stretching Method Brush Model</span>](#fig-2)  
-[<span class="text">3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brush Texture Axial Stretch Demonstration</span>](#fig-3)  
-[<span class="text">4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stamping Method Brush Model</span>](#fig-4)  
-[<span class="text">5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Repetition with the Stamping Model</span>](#fig-5)  
+[<span class="text">2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stretching Brush Model</span>](#fig-2)  
+[<span class="text">3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brush Texture Axial Stretch</span>](#fig-3)  
+[<span class="text">4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stamping Brush Model</span>](#fig-4)  
+[<span class="text">5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stamping Repetition</span>](#fig-5)  
 [<span class="text">6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alpha Accumulation</span>](#fig-6)  
-[<span class="text">7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Proposed Method Brush Model</span>](#fig-7)  
-[<span class="text">8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gradient Nodes in Their Different Styles</span>](#fig-8)  
-[<span class="text">9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Perlin Noise Nodes at Different Scales</span>](#fig-9)  
-[<span class="text">10&nbsp;&nbsp;&nbsp;&nbsp;"F1" Style Voronoi Noise</span>](#fig-10)  
-[<span class="text">11&nbsp;&nbsp;&nbsp;&nbsp;"F2" Style Voronoi Noise</span>](#fig-11)  
-[<span class="text">12&nbsp;&nbsp;&nbsp;&nbsp;"Subtract" Style Voronoi Noise</span>](#fig-12)  
-[<span class="text">13&nbsp;&nbsp;&nbsp;&nbsp;"Multiply" Style Voronoi Noise</span>](#fig-13)  
-[<span class="text">14&nbsp;&nbsp;&nbsp;&nbsp;"Divide" Style Voronoi Noise</span>](#fig-14)  
-[<span class="text">15&nbsp;&nbsp;&nbsp;&nbsp;"Power" Style Voronoi Noise</span>](#fig-15)  
-[<span class="text">16&nbsp;&nbsp;&nbsp;&nbsp;"Multilog" Style Voronoi Noise</span>](#fig-16)  
-[<span class="text">17&nbsp;&nbsp;&nbsp;&nbsp;"Caustics" Style Voronoi Noise</span>](#fig-17)  
+[<span class="text">7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Synthesizing Brush Model</span>](#fig-7)  
+[<span class="text">8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gradient Node</span>](#fig-8)  
+[<span class="text">9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Perlin Noise Node</span>](#fig-9)  
+[<span class="text">10&nbsp;&nbsp;&nbsp;&nbsp;Voronoi Noise Node, F1 Style</span>](#fig-10)  
+[<span class="text">11&nbsp;&nbsp;&nbsp;&nbsp;Voronoi Noise Node, F2 Style</span>](#fig-11)  
+[<span class="text">12&nbsp;&nbsp;&nbsp;&nbsp;Voronoi Noise Node, Subtract Style</span>](#fig-12)  
+[<span class="text">13&nbsp;&nbsp;&nbsp;&nbsp;Voronoi Noise Node, Multiply Style</span>](#fig-13)  
+[<span class="text">14&nbsp;&nbsp;&nbsp;&nbsp;Voronoi Noise Node, Divide Style</span>](#fig-14)  
+[<span class="text">15&nbsp;&nbsp;&nbsp;&nbsp;Voronoi Noise Node, Power Style</span>](#fig-15)  
+[<span class="text">16&nbsp;&nbsp;&nbsp;&nbsp;Voronoi Noise Node, Multilog Style</span>](#fig-16)  
+[<span class="text">17&nbsp;&nbsp;&nbsp;&nbsp;Voronoi Noise Node, Caustics Style</span>](#fig-17)  
 [<span class="text">18&nbsp;&nbsp;&nbsp;&nbsp;Blend Node</span>](#fig-18)  
 [<span class="text">19&nbsp;&nbsp;&nbsp;&nbsp;Levels Node</span>](#fig-19)  
 [<span class="text">20&nbsp;&nbsp;&nbsp;&nbsp;Transform Node</span>](#fig-20)  
 [<span class="text">21&nbsp;&nbsp;&nbsp;&nbsp;Input and Output Nodes</span>](#fig-21)  
-[<span class="text">22&nbsp;&nbsp;&nbsp;&nbsp;Slicer Node</span>](#fig-22)  
-[<span class="text">23&nbsp;&nbsp;&nbsp;&nbsp;Slicer Node Used for an Ink Brush</span>](#fig-23)  
-[<span class="text">24&nbsp;&nbsp;&nbsp;&nbsp;Results of a Flat Bristle Brush with Paint</span>](#fig-24)  
-[<span class="text">25&nbsp;&nbsp;&nbsp;&nbsp;Results of a Ragged-Edged Ink Brush Pen</span>](#fig-25)  
-[<span class="text">26&nbsp;&nbsp;&nbsp;&nbsp;Results of a Watered-Down Ink Brush</span>](#fig-26)  
-[<span class="text">27&nbsp;&nbsp;&nbsp;&nbsp;Results of a Dotted Stamp Roller</span>](#fig-27)
+[<span class="text">22&nbsp;&nbsp;&nbsp;&nbsp;Slicer Node, Slant Demo</span>](#fig-22)  
+[<span class="text">23&nbsp;&nbsp;&nbsp;&nbsp;Slicer Node, Taper Demo</span>](#fig-23)  
+[<span class="text">24&nbsp;&nbsp;&nbsp;&nbsp;Flat Bristle Brush with Paint</span>](#fig-24)  
+[<span class="text">25&nbsp;&nbsp;&nbsp;&nbsp;Ragged-Edged Ink Brush Pen</span>](#fig-25)  
+[<span class="text">26&nbsp;&nbsp;&nbsp;&nbsp;Watered-Down Ink Brush</span>](#fig-26)  
+[<span class="text">27&nbsp;&nbsp;&nbsp;&nbsp;Dotted Stamp Roller</span>](#fig-27)
 
 </div>
 
@@ -190,7 +190,7 @@ The paper begins by investigating the brush rendering approaches taken by existi
 
 <center><h2 id="ch-2">Chapter 2<br>BACKGROUND</h2></center>
 
-Digital artists have a wide range of choices for painting software and each tool specializes in different strengths and styles. Vector graphics applications like Adobe Illustrator and Affinity Designer offer approaches that center around their curve-based art representation. Raster graphics editors like Adobe Photoshop, Krita, and Procreate center their solutions around their layer and pixel-based nature. Specialized paint simulation software like Corel Painter and Adobe Fresco focus on simulation of wet media and paint mixing. These different approaches present varying opportunities and drawbacks for artists depending on their preferences, art styles, and skill areas. Comparisons between different common brush models, which by happenstance all begin with the letter "S", are explained in this section.
+Digital artists have a wide range of choices for painting software and each tool specializes in different strengths and styles. Vector graphics applications like Adobe Illustrator and Affinity Designer offer approaches that center around their curve-based art representation. Raster graphics editors like Adobe Photoshop, Krita, and Procreate center their solutions around their layer and pixel-based nature. Specialized paint simulation software like Corel Painter and Adobe Fresco focus on simulation of wet media and paint mixing. These different approaches present varying opportunities and drawbacks for artists depending on their preferences, art styles, and skill areas. Comparisons between different common brush models, which by happenstance all begin with the letter "S", are examined in this section.
 
 <h3 id="ch-2-1">2.1 Preface: An Ideal Brush Model</h3>
 
@@ -211,7 +211,7 @@ graph TD
 ```
 
 <div id="fig-1" class="figure-caption">
-Figure 1: An ideal brush model, representing real life painting or sophisticated digital painting systems.
+<span>Figure 1: Ideal Brush Model.</span> Represents real life painting or sophisticated digital painting systems.
 </div>
 
 The first component in the model is the configurable brush style decisions that represent how to simulate and render the brush. There is no single way to define this, but it should provide plentiful flexibility to describe how any multitude of styles should look, interact, and behave so as to replicate all ranges of both real and imagined art media. It should also be highly customizable without requiring artists to create and digitize new physical textures or modify code.
@@ -253,7 +253,7 @@ flowchart TD
 ```
 
 <div id="fig-2" class="figure-caption">
-Figure 2: With the stretching method, style decisions occur before the brush is drawn and per-stroke inputs are applied afterward.
+<span>Figure 2: Stretching Brush Model.</span> With the stretching method, style decisions occur before the brush is drawn and per-stroke inputs are applied afterward.
 </div>
 
 Usually texture strips are authored by using real art media to draw a straight line of a certain length, then scanning or photographing the image to digitize it as a texture or detailed vector shape. Since they are based on real brushes, this approach can often look very good in places where its lack of flexibility is not a major constraint.
@@ -263,7 +263,7 @@ The drawbacks of this approach mainly center around its static, non-adaptive nat
 ![](Brush%20Stretch%20Test.png)
 
 <div id="fig-3" class="figure-caption">
-Figure 3: Brush texture axial stretch demonstration in Adobe Illustrator (top) and Affinity Designer (bottom) where the same texture visibly repeats and deviates from its authored aspect ratio.
+<span>Figure 3: Brush Texture Axial Stretch.</span> Demonstration in Adobe Illustrator (top) and Affinity Designer (bottom) shows how the same texture visibly repeats and deviates from its authored aspect ratio.
 </div>
 
 To work with arbitrary stroke widths and lengths, the aspect ratio of the texture will end up being stretched, as shown in Figure 3. To wrap the straight texture around a curving stroke path, more stretching is necessary where tight turns will compress inner radii and stretch outer radii. To integrate pressure or tilt data, users may be able to choose a mapping from those parameters into rendering modifiers like opacity or localized stroke width "pucker". Such transformations take a carefully prepared input texture and reduce its perceptible quality, somewhat diminishing the overall utility of the stretching brush model.
@@ -292,7 +292,7 @@ flowchart TD
 ```
 
 <div id="fig-4" class="figure-caption">
-Figure 4: With the stamping method, style decisions by the author of a brush take the form of a stamp texture and custom settings for the stamping system that applies brush dynamics and other configurable tricks to lend variety and quality to the result.
+<span>Figure 4: Stamping Brush Model.</span> With the stamping method, style decisions by the author of a brush take the form of a stamp texture and custom settings for the stamping system that applies brush dynamics and other configurable tricks to lend variety and quality to the result.
 </div>
 
 The approach does come with its own share of disadvantages. The illusion can often be broken when the repetitiveness of the stamp texture becomes apparent, as shown in the Krita painting application in Figure 5. Randomization of rotation and countless other tricks can be used to break up the repetition with the stamping algorithm, however these strategies need to be configured for each brush style, thereby adding complexity to the user experience. By its nature of stamping down textures, it works better at modeling the look of dry more than wet media. Another drawback is that, while the stamping dynamics settings can be modified on a brush style preset by the user, the texture (which is often digitized from a physical pattern) is not so easily reconfigurable.
@@ -300,13 +300,13 @@ The approach does come with its own share of disadvantages. The illusion can oft
 ![](Obvious%20Repetition%20-%20Krita.png)
 
 <div id="fig-5" class="figure-caption">
-Figure 5: Noticeable repetition is visible in many cases with the stamping model, as shown here in Krita.
+<span>Figure 5: Stamping Repetition.</span> A noticeable repeating pattern is visible in many cases with the stamping model, as shown here in Krita.
 </div>
 
 ![](Alpha%20Accumulation%20and%20Repetition%20Test.png)
 
 <div id="fig-6" class="figure-caption">
-Figure 6: Alpha accumulation and repetition is a tradeoff based on the choice of spacing distance. The circular brushes have 100% feather on the left and 0% on the right. The top row uses 1% spacing, the middle row 25%, and the bottom row 50%.
+<span>Figure 6: Alpha Accumulation.</span> There is a tradeoff between alpha accumulation and repetition based on the choice of spacing distance. The circular brushes have 100% feather on the left and 0% on the right. The top row uses 1% spacing, the middle row 25%, and the bottom row 50%.
 </div>
 
 One further limitation of stamping is how the discrete nature of individual stamps, spaced at a chosen distance interval, leads to an undesirable phenomenon called alpha accumulation. This is where the translucent pixels in a stamp that mostly overlaps itself will add up to become more opaque, reducing the intended translucency that is desired. To reduce the alpha accumulation, a wider spacing interval can be set so fewer stamps overlap each other, but then the discrete repetition becomes more obvious. Figure 6 shows how variations in spacing affect the alpha accumulation and obviousness of separate stamps for simple feathered circular brushes.
@@ -349,7 +349,7 @@ flowchart TD
 ```
 
 <div id="fig-7" class="figure-caption">
-Figure 7: The proposed method provides full dynamics and appearance control to the user based on input data, then stretches the resulting texture strip like the texture stretching brush model. This is the ideal brush model but with the insertion of the "Stretch and curve transformations" step.
+<span>Figure 7: Synthesizing Brush Model.</span> The proposed method provides full dynamics and appearance control to the user based on input data, then stretches the resulting texture strip like the texture stretching brush model. This is the ideal brush model but with the insertion of the "Stretch and curve transformations" step.
 </div>
 
 Instead of using physical art media to create, then digitize, a single specimen of a straight textured stroke, the author of a brush style utilizes a node graph to procedurally generate the paint stroke style. The resulting node setup acts as the "source code" implementing the brush style decisions made by its author, and that can be modified by any user later on.
@@ -371,7 +371,7 @@ The Gradient node generates a white-to-black gradient. Its available style choic
 ![](Nodes%20-%20Gradient.png)
 
 <div id="fig-8" class="figure-caption">
-Figure 8: Gradient nodes in their different styles.
+<span>Figure 8: Gradient Node.</span> Shown with its five styles.
 </div>
 
 The Perlin Noise node generates a randomized cloud pattern. Its scale can be chosen, as shown in Figure 9, to provide different frequencies of noise as desired, and regardless of scale the texture will tile seamlessly along its edges. Its seed can be set to provide a new random pattern.
@@ -379,7 +379,7 @@ The Perlin Noise node generates a randomized cloud pattern. Its scale can be cho
 ![](Nodes%20-%20Perlin%20Noise.png)
 
 <div id="fig-9" class="figure-caption">
-Figure 9: Perlin Noise nodes at different scales.
+<span>Figure 9: Perlin Noise Node.</span> Shown at different scales.
 </div>
 
 The Voronoi Noise node generates a randomized cellular structure. Different jitter values between 0 and 1 can provide a choice of regularity or disorder. Eight choices of style can produce a diverse array of looks to suit the artist's needs. These are "F1" (Figure 10), "F2" (Figure 11), "Subtract" (Figure 12), "Multiply" (Figure 13), "Divide" (Figure 14), "Power" (Figure 15), "Multilog" (Figure 16), and "Caustics" (Figure 17). These styles are implemented taking a grid of points, randomizing their offset based on the jitter value, and calculating the distance of each pixel to the nearest point for the F1 value and the distance to the second-nearest point for the F2 value. Additional styles are created by arithmetically combining F1 and F2 as described in the captions in the figures below.
@@ -387,60 +387,54 @@ The Voronoi Noise node generates a randomized cellular structure. Different jitt
 ![](Nodes%20-%20Voronoi%20Noise%20-%20F1.png)
 
 <div id="fig-10" class="figure-caption">
-Figure 10: Voronoi Noise nodes at different jitter values with the "F1" style.
+<span>Figure 10: Voronoi Noise Node, F1 Style.</span> Shown at different jitter values with the "F1" style.
 </div>
 
 ![](Nodes%20-%20Voronoi%20Noise%20-%20F2.png)
 
 <div id="fig-11" class="figure-caption">
-Figure 11: Voronoi Noise nodes at different jitter values with the "F2" style.
+<span>Figure 11: Voronoi Noise Node, F2 Style.</span> Shown at different jitter values with the "F2" style.
 </div>
 
 ![](Nodes%20-%20Voronoi%20Noise%20-%20Subtract.png)
 
 <div id="fig-12" class="figure-caption">
-
-Figure 12: Voronoi Noise nodes at different jitter values with the "Subtract" style, which is calculated in GLSL as `F2 - F1`.
+<span>Figure 12: Voronoi Noise Node, Subtract Style.</span> Shown at different jitter values with the "Subtract" style, which is calculated in GLSL as <code>F2 - F1</code>.
 
 </div>
 
 ![](Nodes%20-%20Voronoi%20Noise%20-%20Multiply.png)
 
 <div id="fig-13" class="figure-caption">
-
-Figure 13: Voronoi Noise nodes at different jitter values with the "Multiply" style, which is calculated in GLSL as `F1 * F2`.
+<span>Figure 13: Voronoi Noise Node, Multiply Style.</span> Shown at different jitter values with the "Multiply" style, which is calculated in GLSL as <code>F1 * F2</code>.
 
 </div>
 
 ![](Nodes%20-%20Voronoi%20Noise%20-%20Divide.png)
 
 <div id="fig-14" class="figure-caption">
-
-Figure 14: Voronoi Noise nodes at different jitter values with the "Divide" style, which is calculated in GLSL as `F1 / F2`.
+<span>Figure 14: Voronoi Noise Node, Divide Style.</span> Shown at different jitter values with the "Divide" style, which is calculated in GLSL as <code>F1 / F2</code>.
 
 </div>
 
 ![](Nodes%20-%20Voronoi%20Noise%20-%20Power.png)
 
 <div id="fig-15" class="figure-caption">
-
-Figure 15: Voronoi Noise nodes at different jitter values with the "Power" style, which is calculated in GLSL as `pow(F2, F1)`.
+<span>Figure 15: Voronoi Noise Node, Power Style.</span> Shown at different jitter values with the "Power" style, which is calculated in GLSL as <code>pow(F2, F1)</code>.
 
 </div>
 
 ![](Nodes%20-%20Voronoi%20Noise%20-%20Multilog.png)
 
 <div id="fig-16" class="figure-caption">
-
-Figure 16: Voronoi Noise nodes at different jitter values with the "Multilog" style, which is calculated in GLSL as `log(F1) * log(F2)`.
+<span>Figure 16: Voronoi Noise Node, Multilog Style.</span> Shown at different jitter values with the "Multilog" style, which is calculated in GLSL as <code>log(F1) * log(F2)</code>.
 
 </div>
 
 ![](Nodes%20-%20Voronoi%20Noise%20-%20Caustics.png)
 
 <div id="fig-17" class="figure-caption">
-
-Figure 17: Voronoi Noise nodes at different jitter values with the "Caustics" style, which is calculated in GLSL as `log(log(F1) * log(F2))`.
+<span>Figure 17: Voronoi Noise Node, Caustics Style.</span> Shown at different jitter values with the "Caustics" style, which is calculated in GLSL as <code>log(log(F1) * log(F2))</code>.
 
 </div>
 
@@ -451,7 +445,7 @@ The Blend node takes two input textures and composites them as a single output. 
 ![](Nodes%20-%20Blend.png)
 
 <div id="fig-18" class="figure-caption">
-Figure 18: Blend node used in two example compositing scenarios.
+<span>Figure 18: Blend Node.</span> Shown in two example compositing scenarios.
 </div>
 
 The Levels node takes a texture and clamps its light and dark regions as specified. Three examples are shown in Figure 19. "Shadows" and "Highlights" clamps the dark and light parts of the image, making anything beyond the specified values either pure black or pure white. "Midtones (Interp Factor)" biases the gray levels towards clamped white or black areas. "Minimums" and "Maximums" caps the darkest and lightest parts of the texture at some gray level.
@@ -459,7 +453,7 @@ The Levels node takes a texture and clamps its light and dark regions as specifi
 ![](Nodes%20-%20Levels.png)
 
 <div id="fig-19" class="figure-caption">
-Figure 19: Levels node shown in three example usage scenarios.
+<span>Figure 19: Levels Node.</span> Shown in three example usage scenarios.
 </div>
 
 The Transform node takes a texture and modifies its scale, offset position, and rotation. Two examples are shown in Figure 20. It can be configured to repeat, mirror repeat, and clamp when the input texture bounds are exceeded. When rotating, the exposed corners can be configured to have the colors clamped if desired.
@@ -467,7 +461,7 @@ The Transform node takes a texture and modifies its scale, offset position, and 
 ![](Nodes%20-%20Transform.png)
 
 <div id="fig-20" class="figure-caption">
-Figure 20: Transform node shown in two example usage scenarios.
+<span>Figure 20: Transform Node.</span> Shown in two example usage scenarios.
 </div>
 
 <h3 id="ch-3-3">3.3 Input and Output Nodes</h3>
@@ -477,7 +471,7 @@ The Input and Output nodes are the defaults provided in a fresh node graph, as p
 ![](Nodes%20-%20Input%20and%20Output.png)
 
 <div id="fig-21" class="figure-caption">
-Figure 21: Input and Output nodes with the pressure samples connected to the brush output.
+<span>Figure 21: Input and Output Nodes.</span> Shown with the pressure sampling data connected to the brush output.
 </div>
 
 The Input node provides several strips of stroke input data from the stylus axes including pressure, tilt altitude (angle from parallel to normal with the tablet surface), tilt azimuth (angle clockwise from the +X axis), and X and Y positions on the page (increasing from the top left). Each ranges from 0 (black) to 1 (white). While the X and Y positions are provided for completeness, they are unlikely to be useful directly in the procedural texture authorship process; they are more useful in the stroke wrapping stage which is not in the scope of this prototype implementation.
@@ -493,7 +487,7 @@ The Slicer node is an important node designed to convert from square textures in
 ![](Node%20Graph%20-%20Slicer.png)
 
 <div id="fig-22" class="figure-caption">
-Figure 22: Slicer node rendering vertical cross-sections of an upward-slanted blob shape, showing how the increase then decrease in pen pressure rides the slant up then back down by the end as pressure subsides to 0 (black).
+<span>Figure 22: Slicer Node, Slant Demo.</span> Shown with an upward-slanted blob shape having vertical cross-sections sliced based on pressure. The rendered output (along the bottom of the image) demonstrates how the increase then decrease in pen pressure rides the slant up then subsides back down by the end.
 </div>
 
 One example of a common use for the Slicer is to define the way that a brush tapers with an increase in stylus pressure or tilt angle. A more involved example of this concept in Figure 23 approximates the brush pressure contour component of a semi-diluted ink brush.
@@ -501,7 +495,7 @@ One example of a common use for the Slicer is to define the way that a brush tap
 ![](Node%20Graph%20-%20Ink%20Taper.png)
 
 <div id="fig-23" class="figure-caption">
-Figure 23: Slicer node used to generate the pressure-based taper for an ink brush with partially diluted ink.
+<span>Figure 23: Slicer Node, Taper Demo.</span> Shown with the Slicer node used to generate the pressure-based taper for an ink brush with partially diluted ink.
 </div>
 
 The node's two inputs are the "Sliceable" square texture and the "Slice Column Depth" strip texture. The sliceable texture should be designed in a way that its vertical cross sections (columns of pixels) vary on a continuum from left to right. For example, a left-pointing triangle has cross sections that heighten from left to right which makes it great for modeling pen pressure along the brush stroke. Described another way, the Slicer node maps the columns of the input strip texture to the columns of the input square texture, where the brightness of the strip column corresponds to how far right the slice should be taken from the sliceable. Reading an input strip from left to right, the dark shades slice columns from the left parts of the sliceable and the light shades slice from the right parts.
@@ -530,13 +524,9 @@ The brush squiggle preview uses an imported OBJ file's triangle strip mesh with 
 
 A descoped feature would have included an additional preview view with an interactive stroke drawing input surface. This would convert the trajectory path into a triangle strip at the set stroke width with UV coordinates mapping progressively along a strip texture. The live pressure, altitude, azimuth, X, and Y values would feed into the Input node textures while the user draws and the node graph would recompute the drawing to provide a texture to the Output for display on the triangle strip. If the user kept drawing for long enough to overrun the allocated width of the strip texture, it would be doubled in width. Alternatively, a 3D texture could be employed where additional depth layers could hold the overflow. An opportunity for performance gains would come from not re-rendering the full output texture from the node graph each frame, because the sampled information at earlier points along the stroke path do not change and therefore would not need to be redrawn. The prototype implementation does not encounter this because its lacks a temporal aspect that would occur during an interactive drawing session.
 
-And interactive demo, and the full source code for the prototype, may be found at:
+An interactive demo, and full source code for the prototype, may be found at:
 
-<center>
-
-<https://github.com/Keavon/Brush-Nodes>
-
-</center>
+<center><a href="https://github.com/Keavon/Brush-Nodes">https://github.com/Keavon/Brush-Nodes</a></center>
 
 ---
 
@@ -557,19 +547,19 @@ This example, shown in Figure 24, achieves the goal of replicating the overall l
 ![](results-bristle-brush.png)
 
 <div id="fig-24" class="figure-caption">
-Figure 24: Results emulating a flat bristle brush with paint.
+<span>Figure 24: Flat Bristle Brush with Paint.</span> Style created by procedural generation.
 </div>
 
 <br><br>
 
 <h3 id="ch-6-2">6.2 Ragged-Edged Ink Brush Pen</h3>
 
-A brush pen with a vividly black ink provides almost a completely solid appearance except for the taper and the ragged edges, caused by the paper's small-scale surface geometry and the brush tip. Replicating that effect around the edges is the goal for this test, shown in Figure 25. The system handles ink-based brushes very well which other brush models like stamping often struggle with.
+A brush pen with a vividly black ink provides almost a completely solid appearance except for the taper and the ragged edges, caused by the paper's small-scale surface geometry and the brush tip. Replicating that effect around the edges is this test's goal, shown in Figure 25. The system handles ink-based brushes very well, which other brush models like stamping often struggle with.
 
 ![](results-solid-ink.png)
 
 <div id="fig-25" class="figure-caption">
-Figure 25: Results emulating a ragged-edged ink brush pen.
+<span>Figure 25: Ragged-Edged Ink Brush Pen.</span> Style created by procedural generation.
 </div>
 
 <h3 id="ch-6-3">6.3 Watered-Down Ink Brush</h3>
@@ -579,7 +569,7 @@ Taking the ink brush style even further, this test proves the effective ability 
 ![](results-diluted-ink.png)
 
 <div id="fig-26" class="figure-caption">
-Figure 26: Results emulating a watered-down ink brush.
+<span>Figure 26: Watered-Down Ink Brush.</span> Style created by procedural generation.
 </div>
 
 <h3 id="ch-6-4">6.4 Dotted Stamp Roller</h3>
@@ -589,7 +579,7 @@ Deviating from the category of brushes altogether and using an alternate applica
 ![](results-stipple-roller.png)
 
 <div id="fig-27" class="figure-caption">
-Figure 27: Results emulating a dotted stamp roller.
+<span>Figure 27: Dotted Stamp Roller.</span> Style created by procedural generation.
 </div>
 
 ---
@@ -606,11 +596,7 @@ The concept of applying a node graph procedural authoring environment, with appl
 
 The author of this thesis is the creator of a node-based 2D graphics editing tool and plans to use this concept as inspiration for the application's painting system. Further information can be found at the project's website:
 
-<center>
-
-<https://graphite.rs>
-
-</center>
+<center><a href="https://graphite.rs">https://graphite.rs</a></center>
 
 </div>
 
