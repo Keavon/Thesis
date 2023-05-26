@@ -5,7 +5,7 @@ html, body {
 }
 
 article {
-	font-family: "Calibri";
+	font-family: "Calibri", Arial, sans-serif;
 	font-size: 12pt;
 	line-height: 2;
 }
@@ -181,7 +181,7 @@ img {
 
 	@bottom-center {
 		content: counter(page);
-		font-family: "Calibri";
+		font-family: "Calibri", Arial, sans-serif;
 		font-size: 12pt;
 	}
 }
